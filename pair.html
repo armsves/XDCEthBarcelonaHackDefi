@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add liquidity</title>
+  <link rel="icon" type="favicon" href="./assets/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.2.9/dist/web3.min.js"></script>
+  <style>
+    body {
+      background-color: #121212;
+      font-family: 'Lato','Helvetica Neue','Arial',Helvetica,sans-serif;
+      height: 100vh;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding-top: 50px;
+    }
+    .content-section {
+      width: 80%;
+    }
+    .ui.menu, .ui.segment {
+      border-radius: 4px !important;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1) !important;
+      background-color: #1e1e1e !important;
+      color: #ddd;
+    }
+    .ui.menu .item, .light-text-btn {
+      color: #ddd !important;
+    }
+    .dark-text-btn {
+      color: #000 !important;
+    }
+    .ui.input input {
+      color: #000 !important;
+    }
+    .ui.dropdown > .dropdown.icon {
+      color: #ddd !important;
+    }
+    .ui.selection.dropdown {
+      border: none;
+      border-radius: 10px;
+      color: #ddd;
+      background: #333;
+    }
+    .ui.button {
+      background: #1e2e9e;
+      color: #fff;
+      border-radius: 10px;
+    }
+    .ui.button:hover {
+      background: #3342a0;
+    }
+    .liquidity-image {
+      width: 80px; /* You can adjust the size here */
+    }
+  </style>
+</head>
+<body>
+  <div class="ui inverted menu">
+    <a class="item" href="index.html">Home</a>
+    <a class="item" href="#swap">Swap</a>
+    <a class="item" href="loan.html">Loans</a>
+    <a class="item" href="pair.html">TVL Pairs</a>
+    <a class="item" href="oracle.html">Oracle System</a>
+    <div class="right menu">
+      <button class="ui inverted button" id="connectButton">Connect</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="ui center aligned segment content-section">
+      <img class="liquidity-image" src="./assets/pool.png"/>
+      <h3>Add liquidity Pair</h3>
+      <div class="ui fluid selection dropdown" id="fromTokenDropdown">
+        <input type="hidden" name="fromToken">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select token A</div>
+        <div class="menu"></div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="ui fluid selection dropdown" id="toTokenDropdown">
+        <input type="hidden" name="toToken">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select token B</div>
+        <div class="menu"></div>
+      </div>
+      <div class="ui divider"></div>
+      <button class="ui blue button" id="createPairButton">Add liquidity</button>
+    </div>
+  </div>
+
+  <script src="pair.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>

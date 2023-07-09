@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Purrfect Swap</title>
+  <link rel="icon" type="favicon" href="./assets/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.2.9/dist/web3.min.js"></script>
+  <style>
+    body {
+      background-image: url('./assets/loan.png'); /* Replace with your image file path */
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: small; /* This makes sure the image covers the whole page */
+      background-color: #121212; /* This color will be visible while the image is loading or if the image fails to load */
+      font-family: 'Lato','Helvetica Neue','Arial',Helvetica,sans-serif;
+    }
+    .ui.menu, .ui.segment {
+      border-radius: 4px !important;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1) !important;
+      background-color: rgba(30,30,30,0.8) !important;
+      color: #ddd;
+    }
+    .ui.menu .item, .light-text-btn {
+      color: #ddd !important;
+    }
+    .dark-text-btn {
+      color: #000 !important;
+    }
+    .ui.input input {
+      color: #000 !important;
+    }
+    .ui.button {
+      background-color: #743cda;
+      color: #ddd;
+      transition: background-color 0.3s ease;
+    }
+    .ui.button:hover {
+      background-color: #9b4eda;
+    }
+  </style>
+</head>
+<body>
+  <div class="ui inverted menu">
+    <a class="item" href="index.html">Home</a>
+    <a class="item" href="#swap">Swap</a>
+    <a class="item" href="loan.html">Loans</a>
+    <a class="item" href="pair.html">TVL Pairs</a>
+    <a class="item" href="oracle.html">Oracle System</a>
+    <div class="right menu">
+      <span class="item" id="balance">Balance: </span>
+      <button class="ui inverted button" id="connectButton">Connect</button>
+    </div>
+  </div>
+
+
+  <div class="ui center aligned segment">
+    <h3>Deposit</h3>
+    <button class="ui button" id="depositButton">Deposit 1 XDC</button>
+    <button class="ui button" id="depositCollateralButton">Deposit 1 XDC as Collateral</button>
+  </div>
+
+  <div class="ui center aligned segment">
+    <h3>Create Loan</h3>
+    <div class="ui action input">
+      <input type="text" id="loanAmountInput" placeholder="Enter loan amount">
+      <button class="ui button" id="createLoanButton">Create Loan</button>
+    </div>
+  </div>
+
+  <div class="ui center aligned segment">
+    <h3>Manage Loan</h3>
+    <button class="ui button" id="repayLoanButton">Repay Loan</button>
+    <button class="ui button" id="withdrawCollateralButton">Withdraw Collateral</button>
+  </div>
+
+  <div class="ui center aligned segment">
+    <h3>Account Profile</h3>
+    <p id="loanDetails">Active Loan: </p>
+    <p id="collateralBalance">Collateral:<p id="collateralBalanceI">0</p></p>
+    <p id="loanBalance">Loan Balance: </p>
+    <p id="interestDue">Interest Due: </p>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
